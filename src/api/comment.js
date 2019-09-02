@@ -23,6 +23,10 @@ export default {
     return request(URL.GET_COMMENT_DETAIL.replace(':commentId', commentId))
   },
 
+  getComments({ page = 1 } = { page: 1 }) {
+    return request(URL.GET_LIST, 'GET', { page })
+  },
+
   createComment({ content, blog_id, user_id }) {
     // console.log(content, blog_id, user_id)
     return request(URL.CREATE, 'POST', { content, blog_id, user_id })

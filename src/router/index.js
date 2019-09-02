@@ -56,15 +56,15 @@ export const constantRoutes = [
   },
 
   {
-    path: '/admin',
+    path: '/user',
     component: Layout,
-    redirect: '/admin',
+    redirect: '/user',
     children: [
       {
         path: 'manage',
-        name: 'Manage',
-        component: () => import('@/views/admin/index'),
-        meta: { title: '管理员', icon: 'admin' }
+        name: 'userManage',
+        component: () => import('@/views/user/index'),
+        meta: { title: '用户', icon: 'users' }
       }
     ]
   },
@@ -78,14 +78,14 @@ export const constantRoutes = [
     children: [
       {
         path: 'manage',
-        name: 'Manage',
+        name: 'blogManage',
         component: () => import('@/views/blog/index'),
         meta: { title: '博客管理', icon: 'table' }
       },
       {
         path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
+        name: 'Tree1',
+        component: () => import('@/views/blog/create'),
         meta: { title: '创建博客', icon: 'tree' }
       }
     ]
@@ -95,20 +95,12 @@ export const constantRoutes = [
     path: '/tag',
     component: Layout,
     redirect: '/tag',
-    name: 'Tag',
-    meta: { title: '标签', icon: 'tag' },
     children: [
       {
         path: 'manage',
-        name: 'Manage',
+        name: 'tagManage',
         component: () => import('@/views/tag/index'),
-        meta: { title: '标签管理', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: '创建标签', icon: 'tree' }
+        meta: { title: '标签', icon: 'table' }
       }
     ]
   },
@@ -120,8 +112,8 @@ export const constantRoutes = [
     children: [
       {
         path: 'manage',
-        name: 'Manage',
-        component: () => import('@/views/tag/index'),
+        name: 'commentManage',
+        component: () => import('@/views/comment/index'),
         meta: { title: '评论', icon: 'table' }
       }
     ]
